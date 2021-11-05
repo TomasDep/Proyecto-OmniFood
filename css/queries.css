@@ -1,11 +1,12 @@
 /* 
-rem and em do NOT depend on html font-size in media queries!
+NOTA!!!!!!
+rem y el em no dpende del html font-size en las queries!!!!
 Instead, 1rem = 1em = 16px 
 */
 
-/******************************** */
-/* BELOW 1344px (Smaller desktops) */
-/****************************** */
+/********************************** */
+/* BAJO 1344px (SMALLER DESKTOP) */
+/********************************** */
 @media (max-width: 84em) {
   .hero {
     max-width: 120rem;
@@ -20,9 +21,9 @@ Instead, 1rem = 1em = 16px
   }
 }
 
-/******************************** */
-/* BELOW 1200px (Landscape Tablets) */
-/****************************** */
+/********************************** */
+/* BAJO 1200px (LANDSCAPE TABLETS) */
+/********************************** */
 @media (max-width: 75em) {
   html {
     /* 9px / 16px = 0,5625 */
@@ -60,7 +61,7 @@ Instead, 1rem = 1em = 16px
 }
 
 /******************************** */
-/* BELOW 944px (Tablets) */
+/* BAJO 944px (TABLETS) */
 /****************************** */
 @media (max-width: 59em) {
   html {
@@ -121,7 +122,7 @@ Instead, 1rem = 1em = 16px
     margin-top: 1.2rem;
   }
 
-  /* MOBILE NAVIGATION */
+  /* navegador mobile */
   .btn-mobile-nav {
     display: block;
     z-index: 9999;
@@ -143,17 +144,17 @@ Instead, 1rem = 1em = 16px
     justify-content: center;
     transition: all 0.5s ease-in;
 
-    /* Hide navigation */
-    /* Allows NO transitions at all */
+    /* ESCONDER NAVEGADOR */
+    /* no permite transiciones */
     /* display: none; */
 
-    /* 1) Hide it visually */
+    /* 1) Esconder la visualidad  */
     opacity: 0;
 
-    /* 2) Make it unaccessible to mouse and keyboard */
+    /* 2) Hacer que sea inaccesible con el mouses y teclados */
     pointer-events: none;
 
-    /* 3) Hide it from screen readers */
+    /* 3) Esconder del lector de pantalla */
     visibility: hidden;
   }
 
@@ -183,9 +184,9 @@ Instead, 1rem = 1em = 16px
   }
 }
 
-/******************************** */
-/* BELOW 704x (Smaller Tablets) */
-/****************************** */
+/********************************** */
+/* BAJO 704x (SMALLER TABLETS) */
+/********************************** */
 @media (max-width: 44em) {
   .grid--3--cols,
   .grid--4--cols {
@@ -222,7 +223,7 @@ Instead, 1rem = 1em = 16px
 }
 
 /******************************** */
-/* BELOW 544x (Phones) */
+/* BAJO 544x (PHONES) */
 /****************************** */
 @media (max-width: 34em) {
   .grid {
@@ -302,7 +303,7 @@ Instead, 1rem = 1em = 16px
 / 64 / 80 / 96 / 128 */
 
 /******************************** */
-/* BELOW 544x (Phones) */
+/* BAJO 544x (PHONES) */
 /****************************** */
 
 .no-flexbox-gap .main-nav-list li:not(:last-child) {
