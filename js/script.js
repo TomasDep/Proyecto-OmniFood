@@ -1,23 +1,13 @@
-//console.log("Hello Word!");
-/* const myName = "Don Pela";
-const h1 = document.querySelector(".heading-primary");
-console.log(myName);
-console.log(h1); */
-
-/* h1.addEventListener("click", function () {
-  h1.textContent = myName;
-  h1.style.backgroundColor = "red";
-  h1.style.padding = "5rem";
-}); */
-
-//////////////////////////////////////////
-// Set current year
+/**
+ * Pequela funcion para obtener la fecha actual
+ */
 const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 yearEl.textContent = currentYear;
 
-//////////////////////////////////////////
-// Make mobile navigation work
+/**
+ * navegador movile
+ */
 const bntNavEl = document.querySelector(".btn-mobile-nav");
 const headerEl = document.querySelector(".header");
 
@@ -25,8 +15,10 @@ bntNavEl.addEventListener("click", function () {
   headerEl.classList.toggle("nav-open");
 });
 
-//////////////////////////////////////////
-// Smooth scrolling animation
+/**
+ * Funcion para que el desplazamiento de una seccion a otra
+ * sea más suave.
+ */
 const allLinks = document.querySelectorAll("a:link");
 
 allLinks.forEach(function (link) {
@@ -34,20 +26,20 @@ allLinks.forEach(function (link) {
     e.preventDefault();
     const href = link.getAttribute("href");
 
-    // Scroll back to top
+    // Scroll abajo hacia arriva
     if (href === "#")
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
 
-    // Scroll to other links
+    // Scroll al dar click en cada una se las secciones
     if (href !== "#" && href.startsWith("#")) {
       const sectionEl = document.querySelector(href);
       sectionEl.scrollIntoView({ behavior: "smooth" });
     }
 
-    // Close mobile navigation
+    // Cerrar navegador movile
     if (link.classList.contains("main-nav-link")) {
       headerEl.classList.toggle("nav-open");
     }
@@ -56,7 +48,6 @@ allLinks.forEach(function (link) {
 
 //////////////////////////////////////////
 // Sticky navigation
-
 const sectionHeroeEl = document.querySelector(".section-hero");
 
 const obs = new IntersectionObserver(
@@ -73,7 +64,6 @@ const obs = new IntersectionObserver(
     }
   },
   {
-    // In the viewport
     root: null,
     threshold: 0,
     rootMargin: "-80px",
@@ -81,8 +71,10 @@ const obs = new IntersectionObserver(
 );
 obs.observe(sectionHeroeEl);
 
-//////////////////////////////////////////
-// Fixing flexbox gap property missing in some Safari versions
+/**
+ * Funcion para arreglar la propiedad gap que se da
+ * en el navegador safari porque no la soporta.
+ */
 function checkFlexGap() {
   var flex = document.createElement("div");
   flex.style.display = "flex";
@@ -100,5 +92,3 @@ function checkFlexGap() {
   if (!isSopported) document.body.classList.add("no-flexbox-gap");
 }
 checkFlexGap();
-
-// https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
